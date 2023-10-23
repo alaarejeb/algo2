@@ -1,0 +1,33 @@
+ALGORITHM algorithm_name
+VAR
+  tab1 : ARRAY_OF INTEGER[i];
+  tab2 : ARRAY_OF INTEGER[j];
+  sum1,sum2=0 :INTEGER
+  exist:BOOLEAN;
+  total:INTEGER
+BEGIN
+  FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+    exist:=FALSE
+    FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+      IF (tab1[i]==tab2[j]) THEN
+       exist:=TRUE
+      END_IF
+    END_FOR
+    IF (exist==FALSE) THEN
+      sum1:=sum1+tab1[i]
+    END_IF
+  END_FOR
+    FOR i FROM 0 TO tab2.length-1 STEP 1  DO
+    exist:=FALSE
+    FOR j FROM 0 TO tab1.length-1 STEP 1  DO
+      IF (tab2[j]==tab1[i]) THEN
+       exist:=TRUE
+      END_IF
+    END_FOR
+    IF (exist==FALSE) THEN
+      sum2:=sum2+tab2[j]
+    END_IF
+  END_FOR
+  total:=sum1+sum2
+  Write(total)
+END

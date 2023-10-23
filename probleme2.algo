@@ -1,0 +1,26 @@
+PROCEDURE procedure_name(VAR PS:FLOAT,v1,v2:ARRAY_OF FLOAT[n])
+BEGIN
+    FOR i FROM 0 TO V1.length-1 STEP 1  DO
+        PS:=(v1[i]*v2[i]) + PS
+        END_FOR
+END
+ALGORITHM algorithm_produit
+VAR
+    v1 : ARRAY_OF FLOAT[n];
+    v2 : ARRAY_OF FLOAT[n];
+    PS : FLOAT:=0
+BEGIN
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        Read(v1)
+    END_FOR
+        FOR i FROM 0 TO v2.length-1 STEP 1  DO
+        Read(v2)
+    END_FOR
+     procedure_PS(PS,v1,v2)
+    END_IF
+    IF (PS==0) THEN
+        Write("les vecteurs sont orthogonal")
+        ELSE
+        Write("les vecteurs ne sont pas orthogonal")
+    END_IF
+END
